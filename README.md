@@ -1,2 +1,2 @@
 # manual.github.io
-user_guide_cnc_probr
+user_guide_cnc_probe
