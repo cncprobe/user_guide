@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WL10 User Manual</title>
+    <title>WL10 User Guide</title>
     
     <!-- Загружаем шрифты и иконки -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
             padding: 40px 20px;
-            background-color: #f8fafc; /* Светло-серый фон для контраста с карточкой */
+            background-color: #f8fafc;
             color: #1a202c;
             display: flex;
             justify-content: center;
@@ -223,6 +223,7 @@
             border-radius: 8px;
             font-size: 14px; 
             text-align: right;
+            white-space: nowrap;
         }
 
         /* Кнопка BUY */
@@ -272,50 +273,48 @@
 
         <!-- Главный контент -->
         <div class="vers-manual-wrapper">
-            <h1>User Manual</h1>
-            
+            <h1>User Guide</h1>
             <div class="vers-alert vers-alert-info">
                 <i class="material-icons">info_outline</i>
-                <div>This User Manual applies to the <strong>WLR v9</strong> model. For earlier versions, the User Manual can be found in the <a href="https://verstest.site/content/category/7-archive">Archive.</a></div>
+                <div>This User Guide applies to the <strong>WL10</strong> model. For earlier versions, the User Manual can be found via the corresponding links in the <a href="/en/content/category/7-archive">Archive.</a></div>
             </div>
 
             <h2>Purpose</h2>
-            <p>The <strong style="color: #1a1c1e;">WLR</strong> wireless rechargeable touch probe is designed to determine the exact coordinates of workpieces mounted on a CNC milling machine using the contact method. The CNC system records these coordinates at the moment the probe stylus touches the part and uses them to link the machining program to the workpiece coordinate system, measure lengths and diameters, find hole centers, etc.</p>
-            <p>The device can be used with LinuxCNC, Mach3, and other CNC systems. Communication between the probe and the receiver is carried out via a 2.4 GHz radio signal; the receiver is then connected to the CNC system via a cable. The transmitter is built into the probe, and the receiver is supplied as a separate device in the kit.</p>
-
-            <h2>WLR v9 Features</h2>
-            <ol>
-                <li><strong>Unidirectional repeatability:</strong> 0.001 mm.</li>
-                <li><strong>Contacts:</strong> Tungsten carbide ball contacts.</li>
-                <li><strong>Stylus overtravel:</strong> (X,Y) ±10 mm, (Z) -7 mm.</li>
-                <li><strong>Power supply:</strong> Uses a rechargeable Li-ion battery LIR2477 3.6V. The voltage across the contacts dynamically increases to 16V for reliable contact closure.</li>
-                <li><strong>Ultra-low current consumption of the probe:</strong>
-                    <ul>
-                        <li>0.4 mA during operation (continuous radio communication);</li>
-                        <li>0.02 mA in sleep mode;</li>
-                        <li>0 mA when the power button is turned off.</li>
-                    </ul>
-                    <em>Charging frequency with daily use is on average 1-2 times a month, charging time is 1 hour. You can continue using the probe while charging from the receiver. Charging is also possible from any 5V charger. The probe trigger signal can be transmitted via the TYPE-C cable. This can be useful in case of severe radio interference.</em>
+            <p>The <strong>WL10</strong> wireless rechargeable touch probe is designed to determine the precise coordinates of objects mounted on a Computer Numerical Control (CNC) milling machine using a contact method. The CNC system captures these coordinates at the moment the WL10 stylus touches the object and uses them to align the machining program with the workpiece position, calculate lengths and diameters, find hole centers, etc. The device can be used with LinuxCNC, Mach3, and other CNC systems. Communication between the touch probe (TP) and the receiver is carried out via a 2.4 GHz radio signal, while the receiver is connected to the CNC system via a wire. The transmitter is built into the TP. The receiver is included in the package as a separate device.</p>
+            
+            <h2>WL10 Features</h2>
+            <ul class="vers-list">
+                <li>1. Unidirectional repeatability &lt; 0.001 mm.</li>
+                <li>2. Tungsten carbide ball contacts.</li>
+                <li>3. Stylus overtravel (X,Y) ±10 mm, (Z) -7 mm.</li>
+                <li>4. Uses a LIR1240 3.6V lithium-ion rechargeable battery, while the voltage across the contact group is dynamically increased up to 16V for reliable contact closure.</li>
+                <li>5. Ultra-low current consumption of the TP:
+                    <ol class="vers-list">
+                        <li>- 0.085 mA during operation with continuous radio communication enabled,</li>
+                        <li>- 0.025 mA in sleep mode,</li>
+                        <li>- 0 mA when the power button is turned off.</li>
+                    </ol>
+                    Recharging frequency with daily use is on average once a month; charging time is 1 hour. You can continue using the TP while charging from the receiver. The TP trigger signal can be transmitted via a TYPE-C cable. This can be useful in case of severe radio interference. Charging is also possible from any 5-volt charger.
                 </li>
-                <li><strong>Vibration sensor:</strong> Allows waking up from sleep mode by shaking or spindle rotation from 200 rpm.</li>
-                <li><strong>Protection:</strong> Splash (coolant) and dust protection.</li>
-                <li><strong>Receiver features:</strong>
-                    <ul>
-                        <li>Provides a normally closed connection with the probe (continuous radio communication by receiving short signal packets at a frequency of 2 to 5 times per second). Reliability is ensured by a protocol with acknowledgment and duplication of unacknowledged data.</li>
-                        <li>Radio signal delay is 0.75 ms, total delay in the entire chain (from contacts to OUT pin) is 1.5 ms.</li>
-                        <li>Radio signal level indication with every stylus deflection.</li>
-                        <li>Battery level indication.</li>
-                        <li>Automatic search for the best of 16 sub-bands at 2.4 GHz upon power-on or wake-up.</li>
-                        <li>Ability to connect the receiver to power supplies in a wide range of +5V...+24V at the input and output.</li>
-                        <li>Selectable connection schemes to the CNC controller: NPN-PNP, NC-NO.</li>
-                        <li>Input for NPN-NC or NC tool setter.</li>
-                        <li>Hardware sleep mode setup via DIP switches.</li>
-                        <li>Detector for delays over 1.7 ms and warning output to the ERR pin.</li>
-                        <li>LED and sound indication of the probe trigger, LED indication of the error signal.</li>
-                        <li>Protection against output short circuits to power or ground, reverse polarity protection.</li>
-                    </ul>
+                <li>6. A vibration sensor allows waking up from sleep mode by shaking or rotating the TP in the spindle at speeds starting from 200 RPM.</li>
+                <li>7. Splash and dust protection.</li>
+                <li>8. Receiver features:
+                    <ol class="vers-list" style="margin-top: 10px; margin-bottom: 0;">
+                        <li>- Provides a normally closed connection with the TP, or in other words, continuous radio communication by receiving check packets from the TP at a frequency of up to 10 times per second (user-configurable or can be disabled). The reliability of the normally closed circuit over the radio channel is ensured by an acknowledgment protocol and duplication of unacknowledged data.</li>
+                        <li>- Radio signal delay is 0.35 milliseconds; total delay across the entire chain from the TP ball contacts to the receiver's OUT pin is less than 1 millisecond.</li>
+                        <li>- The receiver is equipped with a touch display for easy setup and visual monitoring.</li>
+                        <li>- The main screen displays: sensor triggering, radio signal strength, battery charge level, and time until sleep.</li>
+                        <li>- Automatic and manual search for the best of 36 sub-bands in the 2.4 GHz range. The receiver is also equipped with a visual analyzer that allows monitoring radio frequency noise across all 36 channels simultaneously.</li>
+                        <li>- Ability to connect the receiver to power supplies in a wide range of +5V...+24V at both input and output.</li>
+                        <li>- Ability to select various wiring schemes for connecting to the CNC controller: NPN-PNP, NC-NO.</li>
+                        <li>- Input for an NPN-NC or NC tool setter.</li>
+                        <li>- Configurable sleep modes.</li>
+                        <li>- Radio signal failure detector, warning output, and indication to the ERR output.</li>
+                        <li>- Sound indication of sensor triggering.</li>
+                        <li>- Protection against short circuits of outputs to power or ground, and against reverse polarity.</li>
+                    </ol>
                 </li>
-            </ol>
+            </ul>
 
             <h2>Technical Specifications</h2>
             <div style="margin-bottom: 40px;">
@@ -324,165 +323,194 @@
                     <div class="tech-spec-right">0.001 mm</div>
                 </div>
                 <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">open_with</i> Search directions</div>
+                    <div class="tech-spec-left"><i class="material-icons">control_camera</i> Probing directions</div>
                     <div class="tech-spec-right">±X, ±Y, -Z</div>
                 </div>
                 <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">settings_overscan</i> Over travel limit (X, Y)</div>
+                    <div class="tech-spec-left"><i class="material-icons">settings_overscan</i> Maximum stylus overtravel in XY directions</div>
                     <div class="tech-spec-right">±10 mm</div>
                 </div>
                 <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">vertical_align_bottom</i> Over travel limit (Z)</div>
+                    <div class="tech-spec-left"><i class="material-icons">vertical_align_bottom</i> Maximum stylus overtravel in Z direction</div>
                     <div class="tech-spec-right">-7 mm</div>
                 </div>
                 <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">compress</i> Contact force in XY</div>
+                    <div class="tech-spec-left"><i class="material-icons">compress</i> Trigger force in XY</div>
                     <div class="tech-spec-right">min 0.5N max 0.8N</div>
                 </div>
                 <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">download</i> Contact force in Z</div>
+                    <div class="tech-spec-left"><i class="material-icons">download</i> Trigger force in Z</div>
                     <div class="tech-spec-right">2N</div>
                 </div>
                 <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">timer</i> Tripped signal delay</div>
-                    <div class="tech-spec-right">~ 1.5 ms</div>
+                    <div class="tech-spec-left"><i class="material-icons">timer</i> Receiver response delay to TP trigger signal</div>
+                    <div class="tech-spec-right">&lt; 1 ms</div>
                 </div>
                 <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">battery_std</i> Probe power supply</div>
-                    <div class="tech-spec-right">LIR2477 3.6V</div>
+                    <div class="tech-spec-left"><i class="material-icons">battery_charging_full</i> TP power supply</div>
+                    <div class="tech-spec-right">LIR1240 3.6v</div>
                 </div>
                 <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">power</i> Rechargeable</div>
+                    <div class="tech-spec-left"><i class="material-icons">autorenew</i> Rechargeable</div>
                     <div class="tech-spec-right">Yes</div>
                 </div>
                 <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">flash_on</i> Current consumption in operating mode</div>
-                    <div class="tech-spec-right">0.4 mA</div>
+                    <div class="tech-spec-left"><i class="material-icons">bolt</i> TP current consumption in operating mode</div>
+                    <div class="tech-spec-right">0.085mA</div>
                 </div>
                 <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">snooze</i> Current consumption in sleep mode</div>
-                    <div class="tech-spec-right">0.02 mA</div>
+                    <div class="tech-spec-left"><i class="material-icons">bedtime</i> TP current consumption in sleep mode</div>
+                    <div class="tech-spec-right">0.025mA</div>
                 </div>
                 <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">settings_input_component</i> Receiver power supply</div>
-                    <div class="tech-spec-right">+5V...+24V</div>
+                    <div class="tech-spec-left"><i class="material-icons">power</i> Receiver power supply</div>
+                    <div class="tech-spec-right">+5v...+24v</div>
                 </div>
                 <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">multiline_chart</i> Receiver current consumption</div>
-                    <div class="tech-spec-right" style="text-align: left;">21 mA (5V)<br />14 mA (9V)<br />12 mA (12V)<br />8 mA (24V)</div>
+                    <div class="tech-spec-left"><i class="material-icons">electrical_services</i> Receiver current consumption</div>
+                    <div class="tech-spec-right">21 mA (5v) / 14 mA (9v) / 12 mA (12v) / 8 mA (24v)</div>
                 </div>
                 <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">settings_input_antenna</i> Radio channel range</div>
-                    <div class="tech-spec-right">6 m</div>
+                    <div class="tech-spec-left"><i class="material-icons">wifi_tethering</i> Radio channel range</div>
+                    <div class="tech-spec-right">3 m</div>
                 </div>
                 <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">wifi</i> Radio frequency</div>
+                    <div class="tech-spec-left"><i class="material-icons">podcasts</i> Radio frequency</div>
                     <div class="tech-spec-right">2.4 GHz</div>
                 </div>
             </div>
 
-            <div class="vers-img-wrapper">
-                <!-- Замените ссылку на актуальное изображение, если оно загружено на GitHub Pages -->
-               <img src="img/vers_wlr9_man1.jpeg" alt="WLR v9 dimensions" />
-            </div>
-            <p style="color: #64748b; font-size: 14px; text-align: center;">* All dimensions are for reference. The ball (stylus tip) diameter is indicated approximately; the actual diameter may differ from the indicated one within ±0.01 mm, spherical irregularity &lt; 0.001 mm.</p>
-
-            <h2>Connection</h2>
+            <div class="vers-img-wrapper"><img src="https://vers.ge/img/cms/WLRv105dwg.png" alt="WL10 dimensions" width="224" height="352" /></div>
+            <p style="color: #64748b; font-size: 14px; text-align: center;">* All dimensions are for reference only. The ball (stylus tip) diameter is approximate and may actually vary within ±0.01 mm, spherical irregularity &lt; 0.001 mm.</p>
             
-            <div class="vers-alert vers-alert-info">
-                <i class="material-icons">info_outline</i>
-                <div><strong>Startup sequence: </strong>The WLR kit consists of 2 devices: the probe and the receiver. To start, you first need to turn on the receiver, and then the probe.</div>
-            </div>
-            <div class="vers-alert vers-alert-info">
-                <i class="material-icons">battery_charging_full</i>
-                <div><strong>Battery charging: </strong>Turn off the probe and the receiver, connect them with the included USB cable, then turn on the probe, followed by the receiver. Alternatively, you can use any 5V DC power source (e.g., a mobile phone charger) instead of the receiver.</div>
-            </div>
-            <div class="vers-alert vers-alert-info">
-                <i class="material-icons">cable</i>
-                <div><strong>Wired mode operation: </strong>To transmit the probe trigger signal via the TYPE-C cable, turn off the probe and receiver, connect them with the cable, and then turn on <u>only the receiver</u>.</div>
-            </div>
-
-            <p>Switch functions and receiver connector pinout.</p>
-            <div class="vers-img-wrapper">
-                <img src="https://verstest.site/img/cms/vers_wlr9_man2.jpeg" alt="RFM pin" />
-            </div>
-
-            <p><strong style="color: #52c1a2;">"Time before sleep"</strong> sets the interval of probe inactivity, after which the probe will automatically enter Sleep mode 1. Waking up from this sleep mode is done by shaking or rotating the spindle from 200 rpm, but not more than 1500 rpm.</p>
-            <p><strong style="color: #52c1a2;">"TS simulate"</strong> If you do not use the TS input, this switch must be turned on. The switch permanently connects the TS input to ground. If you decide to use the TS input, the "TS simulate" switch must be turned off, and the "Storing PARAMETERS" procedure must be performed (see the "SERV" button description below).</p>
-            <p><strong style="color: #52c1a2;">"ERR"</strong> is a logic output that indicates excessive delays (more than 1.7 milliseconds). It is accompanied by LED indication on the receiver. It provides the opportunity to cancel an incorrect measurement in the event of a radio channel response delay.</p>
-            <p><strong style="color: #52c1a2;">"Buzzer"</strong> activates the sound signal of the probe trigger.</p>
-            <p><strong style="color: #52c1a2;">"NC NO"</strong> provides a choice between a normally-closed NC (recommended) and a normally-open NO connection scheme for the output to the controller.</p>
-            <p><strong style="color: #52c1a2;">"NPN PNP"</strong> provides a choice between NPN and PNP connection schemes for the output to the controller.</p>
-
-            <div class="vers-img-wrapper"><img src="https://verstest.site/img/cms/rfm_v9_conn_out.jpeg" alt="Connection OUT" /></div>
-            <div class="vers-img-wrapper"><img src="https://verstest.site/img/cms/rfm_v9_conn_err.jpeg" alt="Connection ERR" /></div>
-            <div class="vers-img-wrapper"><img src="https://verstest.site/img/cms/rfm_res.jpeg" alt="Resistors" /></div>
-
-            <p><strong style="color: #52c1a2;">"TS Input"</strong> is used to combine a tool setter (TSm, WTSm, or another third-party NPN-NC or NC type sensor) with the Vers WLR receiver into one common "OUT" output using a logical "OR" scheme.</p>
-            <div class="vers-img-wrapper"><img src="https://verstest.site/img/cms/rfm_v8_ts_conn.jpeg" alt="TS Connection" /></div>
-
-            <p><strong style="color: #52c1a2;">"SERV" button</strong> - if this button is pressed while turning on the receiver, one of two service procedures is performed:<br />1. "Binding the probe to the receiver" if the probe is connected to the receiver via the TYPE-C cable.<br />2. Writing new "Custom PARAMETERS" if the probe is NOT connected to the receiver via the cable.</p>
-
-            <h3>Binding the probe to the receiver</h3>
-            <ol>
-                <li>Turn off the receiver, the probe, and all Vers wireless devices located in the same room.</li>
-                <li>Connect the receiver and the probe to be bound using the included TYPE-C cable.</li>
-                <li>Erasing flash memory: while holding down the "SERV" button, turn on ONLY the receiver. Release the "SERV" button; 2 short buzzer signals will notify you. Turn off the receiver. Disconnect the TYPE-C cable.</li>
-                <li>Writing new partner information to flash memory: turn on the receiver; 3 short buzzer signals will notify you that the memory has been erased. Turn on the probe.</li>
+            <h2>Before Getting Started</h2>
+            <p>Please read the information below before starting to use the WL10. Before the first startup, you must:</p>
+            <p>1. Charge the TP (see the "Connection" section).</p>
+            <p>2. Find the best location to place the receiver. To do this, follow these steps: Mount the TP in the spindle. Turn on the receiver and the TP. The radio signal has a range of up to 3 meters. The closer the receiver is placed to the working area of the CNC machine, the better the radio communication. Overlapping reflected signals create a complex and unique interference pattern at each workspace. You will need to find a position for the receiver where the radio signal strength indicator on its screen is confidently above -80 dBm. This will eliminate packet loss, duplication, and delays. Keep in mind that metal partitions are opaque to radio signals, so do not place the receiver inside electrical cabinets.</p>
+            
+            <h2>Connection</h2>
+            <p>The WL10 kit consists of 2 devices: the touch probe (TP) and the receiver. For charging at the first startup, connect the receiver to any DC power source from 5 to 24 volts:</p>
+            <div class="vers-img-wrapper"><img src="https://vers.ge/img/cms/RFMoff_pwr.png" alt="Receiver power connection" width="471" height="431" /></div>
+            <p>Then connect the receiver and the TP using the included TYPE-C cable. First, turn on the receiver using the button, then the TP. A blue LED inside the TP indicates that the charging process is underway. When the blue LED turns off, the charging process is complete; you can turn off the TP and the receiver and disconnect the TYPE-C cable.</p>
+            <p>Alternatively, instead of the receiver, you can use any 5-volt DC power source with a TYPE-C connector to charge the TP, such as a mobile phone charger. In this case, simply connect the charger to the TP and turn on the TP with the button.</p>
+            <p>To find the best location for placing the receiver at the first startup, connect the receiver to any DC power source from 5 to 24 volts and follow step 2 of the "Before Getting Started" section.</p>
+            
+            <h3>Switch Functions and Receiver Connector Pinout</h3>
+            <p>Before connecting the WL10 to the controller, you must configure the switches on the back of the receiver once, according to your CNC system configuration. The switches set the option for connecting a tool setter and the controller connection modes: NC (normally closed), NO (normally open), NPN (switches negative), PNP (switches positive). DIP switches allow enabling pull-up/pull-down resistors.</p>
+            
+            <div class="vers-img-wrapper"><img src="https://vers.ge/img/cms/RFMback_swichs.png" alt="Switch Functions" width="380" height="547" /></div>
+            <ul class="vers-list" style="margin-top: 15px; margin-bottom: 15px;">
+                <li><strong style="color: #52c1a2;">"TS" Switch</strong> — used in combination with the TS input. If you do not use the TS input, this switch must be turned <em>off </em>"TS NOT CONNECTED", which permanently connects the TS input to ground. If you decide to use the TS input, the "TS" switch must be turned <em>on</em> so the receiver begins to monitor the state of this input.</li>
+                <li><strong style="color: #52c1a2;">"TS" Input</strong> — serves to combine the output of a tool setter (TS10 or another third-party NPN-NC or NC type sensor) with the receiver into one common "OUT" output using a logical "OR" circuit, which allows independent disconnection of either sensor (for example, if the TP goes into sleep mode, the TS10 will remain operational). The TS10 connects to the WL10 as shown in the diagram below and uses the power supply from the WL10 in this case; the TS10 can also use its own power supply.</li>
+                <li><strong style="color: #52c1a2;">"NC-NO"</strong> — allows choosing between a normally closed NC (recommended) and a normally open NO output wiring scheme to the controller.</li>
+                <li><strong style="color: #52c1a2;">"NPN-PNP"</strong> — allows choosing between an NPN and PNP output wiring scheme to the controller.</li>
+                <li><strong style="color: #52c1a2;">"DIP4"</strong> — connects the corresponding pull-up/pull-down resistor to the OUT and ERR outputs. Used in combination with the "NPN-PNP" switch. In NPN mode, DIP switches #1, #2 are ON, others are OFF. In PNP mode, DIP switches #3, #4 are ON, others are OFF.</li>
+                <li><strong style="color: #52c1a2;">"ERR"</strong> — is a logical output that signals excessive delays (more than 1 millisecond). This can occur in the event of weak radio communication (level on the receiver screen below -80 dBm) or severe radio interference. In that case, a duplicate radio packet may need to be sent at the moment of measurement, leading to a delay. It is accompanied by an LED indication on the receiver. It provides the ability to cancel an incorrect measurement if a radio channel response delay occurs at the moment of measurement. A software check of the Error Signal is placed immediately after the probing move G38 (LinuxCNC), G31 (Mach3), before releasing the stylus; if an Error Signal is detected, it is recommended to repeat the measurement.<br /><em>To work with the ERR signal, 1 free digital input must be allocated on your CNC controller, which can be read at the software level.</em></li>
+            </ul>
+            
+            <p>The diagrams below show how to use the "NC NO", "NPN PNP", and "DIP4" switches to select one of the 4 wiring schemes for connecting the OUT and ERR outputs to the controller (please note that the controller may have its own power supply voltage limitations).</p>
+            
+            <div class="vers-img-wrapper"><img src="https://vers.ge/img/cms/conn.png" alt="Connection Diagrams" width="727" height="574" /></div>
+            
+            <p>Wiring diagram for the tool setter or a third-party sensor:</p>
+            <div class="vers-img-wrapper"><img src="https://vers.ge/img/cms/RFMoff__tsm.png" alt="Tool setter diagram 1" width="426" height="436" /></div>
+            <div class="vers-img-wrapper"><img src="https://vers.ge/img/cms/RFMoff_nc.png" alt="Tool setter diagram 2" width="427" height="442" /></div>
+            
+            <h2>Screen Interface Navigation</h2>
+            <p><strong>Main Screen:</strong></p>
+            <div class="vers-img-wrapper"><img src="https://vers.ge/img/cms/dwin_main_note.png" alt="Main Screen" width="413" height="413" /></div>
+            <p>Screen elements 1 through 6 are clickable; the rest are informational.</p>
+            <p>1 - Battery charge level. Pressing it changes the level of detail in the center of the screen from minimal to full.<br/>
+            2 - Radio signal strength. Navigates to the Radio Setup Screen.<br/>
+            3 - Time until sleep. Navigates to the Sleep Timer Setup Screen.<br/>
+            4 - Navigates to the General Settings Screen.<br/>
+            5 - Navigates to the Help Screen.<br/>
+            6 - Buzzer On/Off.<br/>
+            7 - Stylus status.<br/>
+            8 - TP status.</p>
+            
+            <p><strong>Radio Setup Screen:</strong></p>
+            <div class="vers-img-wrapper"><img src="https://vers.ge/img/cms/dwin_radio.png" alt="Radio Setup" width="402" height="402" /></div>
+            <p>1 - Manual channel number selection from 0 to 36.<br/>
+            2 - Refresh spectrogram.<br/>
+            3 - Toggle automatic channel search mode on and off.<br/>
+            4 - Press and hold until reboot to save changes.<br/>
+            5 - Exit to the Main Screen.<br/>
+            6 - Informational area, spectrogram — noise levels across all channels simultaneously.</p>
+            
+            <p><strong>Sleep Timer Setup Screen: </strong></p>
+            <div class="vers-img-wrapper"><img src="https://vers.ge/img/cms/dwin_timer.jpg" alt="Timer Setup" width="227" height="170" /></div>
+            <p>If the TP is not used during this time, it will switch to sleep mode with minimal power consumption. Waking up from sleep mode is done by shaking or rotating it in the spindle at 200 RPM. When the stylus is deflected, the countdown resets to this value and starts over. Set the desired value using the slider or arrows, then press and hold "Set" until reboot to save.</p>
+            
+            <p><strong>General Settings Screen:</strong></p>
+            <div class="vers-img-wrapper"><img src="https://vers.ge/img/cms/dwin_settings.png" alt="General Settings" width="331" height="314" /></div>
+            <p>1 - Input field for the TP Serial Number to pair it with the receiver. The 5-digit TP Serial Number is engraved on the TP body. If there is no engraving, the Serial Number corresponds to the order number.<br/>
+            2 - These switches allow disabling the LED indication in the TP to save energy.<br/>
+            3 - Check period: this input field sets the interval between connection check packets between the TP and the receiver. This simulates a normally closed connection for safety purposes.<br/>
+            4 - Press and hold until reboot to save changes.<br/>
+            5 - Exit to the Main Screen.</p>
+            
+            <p><strong>Help Screen:</strong></p>
+            <div class="vers-img-wrapper"><img src="https://vers.ge/img/cms/dwin_help.jpg" alt="Help Screen" width="244" height="182" /></div>
+            <p>Here are some quick tips.</p>
+            
+            <h2>Pairing the TP with the Receiver</h2>
+            <p>The devices are supplied already paired. This procedure is only needed to pair a receiver and a TP from different kits. Only one TP can be paired to a single receiver.</p>
+            <ol class="vers-list">
+                <li>1. Turn off the receiver, the TP, and all WL10 wireless devices located in the same room.</li>
+                <li>2. Turn on the receiver.</li>
+                <li>3. Select the "Settings" section on the screen.</li>
+                <li>4. Enter the serial number of your TP in the corresponding field. Press and hold the "Set" button until it reboots. The 5-digit serial number can be found directly on the TP body, or, if there is no engraving, it corresponds to your order number on the website.</li>
             </ol>
-
-            <h3>Custom PARAMETERS</h3>
-            <table>
-                <tbody>
-                    <tr>
-                        <td>P1</td>
-                        <td>1</td>
-                        <td>Invert (1) or do not invert (0) the state of the OUT pin in the event of transitioning to sleep mode or turning off the probe. Set to 1 if you do not plan to connect a tool setter to the TS input.</td>
-                    </tr>
-                    <tr>
-                        <td>P2</td>
-                        <td>1</td>
-                        <td>Invert (1) or do not invert (0) the state of the ERR pin. The recommended value is 1.</td>
-                    </tr>
-                    <tr>
-                        <td>P3</td>
-                        <td>1</td>
-                        <td>Fast (1) or slow (0) search for the best channel. The recommended value is 1.</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>LED indication on the probe</h3>
-            <ul>
-                <li><strong>Red LED is on:</strong> stylus is deflected;</li>
-                <li><strong>Green LED (short repeating pulse):</strong> stylus is released;</li>
-                <li><strong>Green LED (flashes twice a second):</strong> communication lost, restart receiver then probe;</li>
-                <li><strong>Blue LED is on:</strong> the battery is charging.</li>
+            
+            <h2>LED Indication</h2>
+            <h3>LED Indication in the TP:</h3>
+            <ul class="vers-list" style="margin-top: 10px; margin-bottom: 20px;">
+                <li><strong style="color: #1a1c1e;">Red LED is lit:</strong> stylus is deflected (triggered);</li>
+                <li><strong style="color: #1a1c1e;">Green LED (short repeating pulse):</strong> normal mode, connected to the receiver; the LED flashes on every fifth check connection packet;</li>
+                <li><strong style="color: #1a1c1e;">Blue LED is lit:</strong> battery is charging. If the battery is deeply discharged, the blue LED may not turn on immediately until the dynamic control system restores the charge to a safe minimum level. The blue LED will turn off when the charge level reaches 80%.</li>
             </ul>
-
-            <h3>LED indication on the receiver</h3>
-            <ul>
-                <li><strong>Red LED bar is on:</strong> stylus is deflected;</li>
-                <li><strong>Green LED bar is on:</strong> battery charge level;</li>
-                <li><strong>Light blue LED OUT is on:</strong> status of the OUT output;</li>
-                <li><strong>Red LED ERR is on:</strong> status of the ERR output.</li>
+            <p>LEDs are major energy consumers in the TP. They can be disabled if desired in the receiver settings.</p>
+            
+            <h3>LED Indication in the Receiver:</h3>
+            <ul class="vers-list" style="margin-top: 10px; margin-bottom: 20px;">
+                <li><strong style="color: #1a1c1e;">Blue OUT LED:</strong> indicates the logical level of the OUT output;</li>
+                <li><strong style="color: #1a1c1e;">Red ERR LED:</strong> indicates the logical level of the ERR output.</li>
             </ul>
-
-            <h2>Adjustment</h2>
-            <p>Before starting measurements, it is necessary to perform the device adjustment. The device is installed in the spindle, and a test dial indicator is fixed nearby. The indicator must be sensitive to a weak force of 0.3-0.5N.</p>
-            <div class="vers-img-wrapper"><img src="https://verstest.site/img/cms/wlr_v8_adj.jpeg" alt="Adjustment" /></div>
-            <p>The deviation is eliminated by turning the M2.5 adjusting screws using the included 2mm hex key. Adjustment involves both tightening and loosening the screws.</p>
-
+            
+            <h2>Wired Operation</h2>
+            <p>The WL10 has the capability to operate via wire in conditions of severe radio interference. The main sources of such radio interference are microwave ovens, welding, and congested Wi-Fi networks. To transmit the sensor trigger signal via the TYPE-C cable, turn off both the probe and the receiver, connect them with the cable, and turn on only the receiver.</p>
+            
+            <h2>Adjustment (Calibration)</h2>
+            <p>Before starting measurements, it is necessary to adjust the TP runout. Mount the TP in the spindle and secure a dial test indicator nearby (see picture below). The indicator must be sensitive to a light force of 0.3-0.5N (most lever-type dial test indicators have this property). Rotate the spindle axis by hand and monitor the amplitude of the stylus ball runout (deviation from the axis of rotation) on the indicator.</p>
+            
+            <div class="vers-img-wrapper"><img src="https://vers.ge/img/cms/WLRv105_just.png" alt="Adjustment (Calibration)" width="437" height="457" /></div>
+            
+            <p>The deviation is eliminated by turning the recessed M2.5 adjustment screws using the included 2 mm hex key. Both tightening and loosening of the screws are used during adjustment. It is recommended to hold the key by the short arm to avoid applying excessive force. It will take several cycles of "spindle rotation — check — adjustment" to achieve the minimum deviation acceptable for a specific measurement.</p>
+            
             <h2>Usage</h2>
-            <p>The radio channel in Vers WLR simulates a normally closed connection between the probe and the receiver. The graph below shows the safe probing speed-acceleration combinations.</p>
-            <div class="vers-img-wrapper"><img src="https://verstest.site/img/cms/velocity_accel_wlrV8.jpeg" alt="Velocity Graph" /></div>
-
-            <p>For convenient operation with the probe in the <strong>LinuxCNC</strong> system, the <a href="https://verstest.site/content/19-probe-screen-v28">ProbeScreen</a> software is freely available; for working in the <strong>Mach3</strong> system — <a href="https://verstest.site/content/12-probe_wizard">Probe Wizard</a>.</p>
-
+            <p>The radio channel in the WL10 simulates a normally closed connection between the TP and the receiver. A radio channel loss is identical to a wire break, with the only difference being that the response to a channel break at the OUT or ERR outputs arrives with a delay equal to the Check period (not to be confused with the response delay to stylus deflection &lt; 1 ms). The graph below shows safe speed-acceleration combinations for probing (the green hatched area), at which the machine will stop without breaking the stylus, even in the event of a radio communication failure at the most "unfortunate" moment when the stylus has just touched the part. This takes into account a stylus overtravel of 7 mm and a Check period = 300 ms.</p>
+            
+            <div class="vers-img-wrapper"><img src="https://vers.ge/img/cms/vers_wlr9_man8.jpeg" alt="Combinations graph" width="528" height="394" /></div>
+            
+            <p>The formula is derived from the initial conditions:</p>
+            <ol class="vers-list">
+                <li><strong style="color: #1a1c1e;">S = 7 mm</strong> — maximum allowable stylus overtravel distance</li>
+                <li><strong style="color: #1a1c1e;">t = 0.3 s</strong> — maximum delay time for detecting a connection loss, after which deceleration to a full stop begins</li>
+                <li><strong style="color: #1a1c1e;">V</strong> — probing feedrate in mm/min, Y-axis on the graph</li>
+                <li><strong style="color: #1a1c1e;">a</strong> — acceleration set in the machine settings, in mm/s², X-axis on the graph</li>
+            </ol>
+            <p style="color: #64748b; font-size: 14px;">(Formula used for calculations: S = 2*V*t - a*(t²)/2)</p>
+            
+            <div class="vers-alert vers-alert-info" style="margin-top: 30px;">
+                <i class="material-icons">download</i>
+                <div>Free software is available for convenient work with the touch probe: <strong>ProbeScreen</strong> for LinuxCNC, and <strong>Probe Wizard</strong> for Mach3.</div>
+            </div>
+            
             <!-- Кнопка покупки -->
             <div style="text-align: center; margin-top: 40px;">
-                <a href="https://verstest.site/43-wlr-v10.html" class="buy-btn">
-                    <i class="material-icons">shopping_cart</i> Buy WLR v9
+                <a href="/43-wl10.html" class="buy-btn">
+                    <i class="material-icons">shopping_cart</i> Buy WL10
                 </a>
             </div>
 
