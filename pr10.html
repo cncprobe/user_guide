@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PR v10 User Manual</title>
+    <title>PR9 / PR10 User Guide</title>
     
     <!-- Загружаем шрифты и иконки -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -205,6 +205,7 @@
             font-style: italic;
             margin-top: 5px;
             font-size: 14px;
+            text-align: center;
         }
 
         /* Кнопка BUY */
@@ -256,32 +257,33 @@
             
             <div class="vers-alert vers-alert-info">
                 <i class="material-icons">info_outline</i>
-                <div>This User Guide applies to the currently released <strong>PR v9 v10</strong> models. For earlier versions, the User Guide can be found at the corresponding links in the <a href="https://verstest.site/content/category/7-archive">Archive.</a></div>
+                <div>This User Guide applies to the currently released <strong>PR9 and PR10</strong> models. For earlier versions, the User Guide can be found at the corresponding links in the <a href="https://verstest.site/content/category/7-archive">Archive.</a></div>
             </div>
 
             <h2>Purpose</h2>
-            <p>Touch probe <strong>PR</strong> is designed to determine the exact coordinates of objects mounted on a CNC milling machine. The CNC system generates these coordinates when the VersPR stylus touches the object and uses them to link the processing program to the workpiece location, to measure lengths, diameters, to search for hole centers, etc.</p>
+            <p>Touch probe <strong>PR</strong> is designed to determine the exact coordinates of objects mounted on a CNC milling machine. The CNC system generates these coordinates when the PR stylus touches the object and uses them to link the processing program to the workpiece location, to measure lengths, diameters, to search for hole centers, etc.</p>
             <p>The device can be used with various CNC systems: LinuxCNC, Mach3, embedded systems on industrial machines, etc. The device is connected to the CNC system via a cable (see section <a href="#connection">Connection</a>).</p>
 
-            <h2>PR v10 main features</h2>
+            <h2>PR10 features</h2>
             <ol>
-                <li>Unidirectional repeatability 0.001 mm.</li>
-                <li>Tungsten carbide pin-ball contacts.</li>
-                <li>Over travel limit (X,Y) ±10mm, (Z) -7mm.</li>
+                <li>Unidirectional repeatability <strong>0.001 mm</strong>.</li>
+                <li><strong>Tungsten carbide</strong> pin-ball contacts.</li>
+                <li>Over travel limit (X,Y) <strong>±10mm</strong>, (Z) <strong>-7mm</strong>.</li>
+                <li>The PR10 is equipped with both <strong>NPN-NC and PNP-NC</strong> output types.</li>
+                <li><strong>Protection</strong> against short circuits of the output to power or ground, from power reversal.</li>
+                <li>Two connector options:
+                    <ul style="margin-top: 10px; margin-bottom: 0;">
+                        <li><strong>Magnetic</strong> - the most convenient jack, suitable for working with plastics and non-ferrous (non-magnetic) metals.</li>
+                        <li><strong>Waterproof</strong> - for work in humid environments or with steels.</li>
+                    </ul>
+                </li>
             </ol>
-            
-            <p>Two connector options:</p>
-            <ul style="margin-top: 10px; margin-bottom: 20px;">
-                <li><strong>Magnetic</strong> - the most convenient jack, suitable for working with plastics and non-ferrous (non-magnetic) metals.</li>
-                <li><strong>Waterproof</strong> - for work in humid environments or with steels.</li>
-            </ul>
-            <p>The probe is equipped with both NPN-NC and PNP-NC output types. Protection against short circuits of the output to power or ground, from power reversal.</p>
 
             <h2>Specification</h2>
             <div style="margin-bottom: 40px;">
                 <div class="tech-spec-row">
                     <div class="tech-spec-left"><i class="material-icons">straighten</i> Unidirectional repeatability</div>
-                    <div class="tech-spec-right">&lt;0.001 mm</div>
+                    <div class="tech-spec-right">&lt; 0.001 mm</div>
                 </div>
                 <div class="tech-spec-row">
                     <div class="tech-spec-left"><i class="material-icons">bolt</i> Power supply</div>
@@ -292,8 +294,8 @@
                     <div class="tech-spec-right">±X, ±Y, -Z</div>
                 </div>
                 <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">bolt</i> Current сonsumption</div>
-                    <div class="tech-spec-right">&lt;4mA</div>
+                    <div class="tech-spec-left"><i class="material-icons">electrical_services</i> Current consumption</div>
+                    <div class="tech-spec-right">&lt; 4 mA</div>
                 </div>
                 <div class="tech-spec-row">
                     <div class="tech-spec-left"><i class="material-icons">settings_overscan</i> Over travel limit (X,Y)</div>
@@ -322,7 +324,7 @@
             </div>
 
             <div class="vers-img-wrapper">
-                <img src="/img/manual/vers_pr_man1.jpeg" alt="Vers PR v10" />
+                <img src="https://vers.ge/img/cms/VersPRv102_dwg.png" alt="Vers PR dimensions" />
             </div>
             <p class="vers-recommendation">* All sizes are for reference. The diameter of the ball (tip of the stylus) is approximate, in fact it can differ from the specified within ± 0.01 mm, spherical irregularity &lt;0.001 mm.</p>
 
@@ -330,8 +332,8 @@
             <p>It is necessary to adjust the probe before starting the measurement. The probe is installed in the spindle, a check indicator is placed near to it (Fig. 1). The indicator should be sensitive to a weak effect of 0.3-0.5N (for example, most lever indicators have this property). The axis of the spindle is rotated by hand and the amplitude of the deflection of the stylus ball from the axis of rotation is controlled by the indicator.</p>
             
             <div class="vers-img-wrapper">
-                <img src="/img/manual/vers_pr_man2.jpeg" alt="Fig.1. Adjustment" /> 
-                <div class="vers-img-caption">Fig. 1</div>
+                <img src="/img/manual/vers_pr_man2.jpeg" alt="Adjustment" /> 
+                <div class="vers-img-caption">Fig. 1. Adjustment</div>
             </div>
             
             <p>The deviation is eliminated by turning the adjusting screws with a 2mm hex key from the kit. When adjusting, both tightening and loosening of the screws are used.</p>
@@ -344,28 +346,28 @@
             <h2 id="connection">Connection</h2>
             <p>The sensors are equipped with NPN-NC and PNP-NC outputs, polarity reversal protection, protection against short circuits of the output to power and ground. Both NPN and PNP outputs are built into the device and routed to separate pins.</p>
             
-            <p><strong>Wiring diagram to the machine for the version with magnetic connector</strong> (Vers PR v10 magnetic jack):</p>
+            <p><strong>Wiring diagram to the machine for the version with magnetic connector</strong> (PR-10 magnetic jack):</p>
             <div class="vers-img-wrapper">
-                <img src="/img/manual/vers_pr_man3.jpeg" alt="Vers PR v10 magnetic jack wiring diagram" />
+                <img src="/img/manual/vers_pr_man3.jpeg" alt="Vers PR magnetic jack wiring diagram" />
             </div>
             
-            <p><strong>Wiring diagram to the machine for the version with waterproof connector</strong> (Vers PR v10 waterproof jack):</p>
+            <p><strong>Wiring diagram to the machine for the version with waterproof connector</strong> (PR-10 waterproof jack):</p>
             <div class="vers-img-wrapper">
-                <img src="/img/manual/vers_pr_man4.jpeg" alt="Vers PR v10 waterproof jack wiring diagram" />
+                <img src="/img/manual/vers_pr_man4.jpeg" alt="Vers PR waterproof jack wiring diagram" />
             </div>
             
-            <p class="vers-recommendation">The colors of the wires inside the cable from the kit correspond to the colors of the connections on the diagram.</p>
+            <p style="color: #64748b; font-style: italic; font-size: 14px; text-align: left;">The colors of the wires inside the cable from the kit correspond to the colors of the connections on the diagram.</p>
 
-            <h2>Usage</h2>
+            <!--<h2>Usage</h2>
             <p>There is software <a href="https://verstest.site/content/19-probe-screen-v28">ProbeScreen</a> in free access for convenient work with probe in the LinuxCNC system.</p>
             <p>And <a href="https://verstest.site/content/12-probe_wizard">Probe Wizard</a> for work in the Mach3 system.</p>
 
             <!-- Кнопка покупки -->
-            <div style="text-align: center; margin-top: 40px;">
+            <!--<div style="text-align: center; margin-top: 40px;">
                 <a href="https://verstest.site/39-97-copy-of-vers-pr-v9.html#/7-jack-magnetic" target="_blank" rel="noreferrer noopener" class="buy-btn">
                     <i class="material-icons">shopping_cart</i> Buy PR v10
                 </a>
-            </div>
+            </div>-->
 
         </div>
     </div>
