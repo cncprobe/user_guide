@@ -245,82 +245,104 @@
 
         <!-- Главный контент -->
         <div class="vers-manual-wrapper">
-            <h1>User Guide</h1>
-            
-            <div class="vers-alert vers-alert-info">
-                <i class="material-icons">info_outline</i>
-                <div>This User Guide applies to the currently released <strong>TS10 / TSm</strong> models.</a></div>
-            </div>
-
-            <h2>Purpose</h2>
-            <p>Tool setter <strong>TS10</strong> is designed to automatically measure the tool length and detect tool breakage on CNC milling machines. The CNC system records the coordinates when the tool touches the setter plate and uses them for automated tool length offset compensation.</p>
-            <p>The device can be used with various CNC systems: LinuxCNC, Mach3, GRBL, etc. The device is connected to the CNC system via a cable (see section <a href="#connection">Connection</a>).</p>
-
-            <h2>TS10 features</h2>
-            <ol>
-                <li>High-precision repeatability <strong>&lt; 0.001 mm</strong>.</li>
-                <li>Hardened contact surface.</li>
-                <li>Overtravel protection mechanism.</li>
-                <li>Equipped with both <strong>NPN-NC and PNP-NC</strong> output types.</li>
-                <li><strong>Protection</strong> against short circuits of the output to power or ground, and reverse polarity.</li>
-                <li>Compact and robust design optimized for industrial shop floors.</li>
-            </ol>
-
-            <h2>Specification</h2>
-            <div style="margin-bottom: 40px;">
-                <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">straighten</i> Repeatability</div>
-                    <div class="tech-spec-right">&lt; 0.001 mm</div>
-                </div>
-                <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">bolt</i> Power supply</div>
-                    <div class="tech-spec-right">+5v...+24v</div>
-                </div>
-                <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">electrical_services</i> Current consumption</div>
-                    <div class="tech-spec-right">&lt; 4 mA</div>
-                </div>
-                <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">vertical_align_bottom</i> Over travel limit (Z)</div>
-                    <div class="tech-spec-right">5 mm</div>
-                </div>
-                <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">compress</i> Contact force</div>
-                    <div class="tech-spec-right">1.5 N</div>
-                </div>
-                <div class="tech-spec-row">
-                    <div class="tech-spec-left"><i class="material-icons">shield</i> Protection grade</div>
-                    <div class="tech-spec-right">IP67</div>
-                </div>
-            </div>
-
-            <div class="vers-img-wrapper">
-                <img src="https://vers.ge/img/manual/vers_tsm_man1.jpeg" alt="TS10 dimensions" />
-            </div>
-            <p class="vers-recommendation">* All sizes are for reference.</p>
-
-            <h2 id="connection">Connection</h2>
-            <p>The tool setter is equipped with NPN-NC and PNP-NC outputs, polarity reversal protection, and protection against short circuits of the output to power and ground.</p>
-            
-            <p><strong>Wiring diagram to the machine:</strong></p>
-            <div class="vers-img-wrapper">
-                <img src="https://vers.ge/img/manual/vers_tsm_man3.jpeg" alt="TS10 wiring diagram" />
-            </div>
-            
-            <p style="color: #64748b; font-style: italic; font-size: 14px; text-align: left;">The colors of the wires inside the cable from the kit correspond to the colors of the connections on the diagram.</p>
-
-            <!--<h2>Usage</h2>
-            <p>To configure automated tool length measurement routines in <strong>LinuxCNC</strong> or <strong>Mach3</strong>, refer to your controller's macro configuration guidelines.</p>
-
-            <!-- Кнопка покупки -->
-            <!--<div style="text-align: center; margin-top: 40px;">
-                <a href="https://vers.ge" target="_blank" rel="noreferrer noopener" class="buy-btn">
-                    <i class="material-icons">shopping_cart</i> Buy TS10
-                </a>
-            </div>-->
-
-        </div>
-    </div>
+<h1>User Guide</h1>
+<div class="vers-alert vers-alert-info"><i class="material-icons">info_outline</i>
+<div>This User Guide applies to the currently released<strong> TS10</strong> model. For earlier versions, the User Guide can be found at the corresponding links in the <a href="https://vers.ge/content/category/7-archive" class="vers-desc-btn">Archive.</a></div>
+</div>
+<h2>Purpose</h2>
+<p style="margin-bottom: 20px;">The <strong>TS10</strong> sensor is used to determine tool height and diameter. CNC milling machine generates coordinates when the tool touches the TS10 measurement pad and uses them to calculate the height and diameter of the tool. The device can be used with various CNC systems: LinuxCNC, Mach3, embedded systems on industrial machines, etc.</p>
+<h2 style="color: #1a1c1e; font-size: 28px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f1f5f9;">TS10 main features</h2>
+<ol style="color: #475569; line-height: 1.8; margin-bottom: 30px; padding-left: 20px;">
+<li style="margin-bottom: 10px;">Unidirectional repeatability <strong>0.001 mm</strong>.</li>
+<li style="margin-bottom: 10px;"><strong>Tungsten carbide</strong> pin-ball contacts.</li>
+<li style="margin-bottom: 10px;">Over travel limit <strong>7mm</strong>.</li>
+<li style="margin-bottom: 10px;">Measuring tool length and <strong>diameter</strong>.</li>
+<li style="margin-bottom: 10px;">The tool setter is equipped with both <strong>NPN-NC and PNP-NC</strong> output types.</li>
+<li style="margin-bottom: 10px;"><strong>Protection</strong> against short circuits of the output to power or ground, from power reversal, splash protection.</li>
+</ol>
+<h2 style="color: #1a1c1e; font-size: 28px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f1f5f9;">Specifications</h2>
+<!-- КРАСИВАЯ СЕТКА ХАРАКТЕРИСТИК -->
+<div style="margin-bottom: 30px;"><!-- Item 1 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">straighten</i> <span style="font-size: 15px;">Unidirectional repeatability</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">0.001 mm</span></div>
+</div>
+<!-- Item 2 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">control_camera</i> <span style="font-size: 15px;">Search directions</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">±X, ±Y, -Z</span></div>
+</div>
+<!-- Item 3 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">settings_overscan</i> <span style="font-size: 15px;">Over travel limit (X,Y,Z)</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">7 mm</span></div>
+</div>
+<!-- Item 4 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">compress</i> <span style="font-size: 15px;">Contact force</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">min 0.5N max 2N</span></div>
+</div>
+<!-- Item 5 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">height</i> <span style="font-size: 15px;">Diameter and overall height</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">D=34 mm, H=43 mm</span></div>
+</div>
+<!-- Item 6 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">radio_button_unchecked</i> <span style="font-size: 15px;">Diameter* and height of the ceramic pad</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">D=10mm, h=2.5mm</span></div>
+</div>
+<!-- Item 7 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">bolt</i> <span style="font-size: 15px;">Power supply</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">+5v...+24v</span></div>
+</div>
+<!-- Item 8 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">electrical_services</i> <span style="font-size: 15px;">Current consumption</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">&lt;4mA</span></div>
+</div>
+<!-- Item 9 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">blur_on</i> <span style="font-size: 15px;">Dust protection</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">Yes</span></div>
+</div>
+<!-- Item 10 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">water_drop</i> <span style="font-size: 15px;">Splash protection</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">Yes</span></div>
+</div>
+<!-- Item 11 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">build</i> <span style="font-size: 15px;">Adjustability</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">Yes</span></div>
+</div>
+<!-- Item 12 -->
+<div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 16px 20px; min-width: 300px;">
+<div style="color: #1a1c1e; font-weight: 600; line-height: 1.3;"><i class="material-icons" style="color: #52c1a2; font-size: 24px; margin-right: 12px;">architecture</i> <span style="font-size: 15px;">Possibility to measure tool diameter</span></div>
+<div style="text-align: right; margin-left: 15px;"><span style="color: #334155; font-weight: 600; background: #f8fafc; padding: 6px 12px; border: 1px solid #e2e8f0; font-size: 14px; white-space: nowrap;">Yes</span></div>
+</div>
+</div>
+<p style="color: #64748b; font-style: italic; margin-top: 5px;">*Diameter 9.98 ±0.02mm, cylindrical and planar irregularity &lt;2µm</p>
+<h2 style="color: #1a1c1e; font-size: 28px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f1f5f9;">Installation</h2>
+<div class="vers-alert vers-alert-info"><i class="material-icons">info_outline</i>
+<div>Placement TS10 is recommended to be chosen so that the entire surface of the ceramic platform of the device is in the working area of the machine, with an indent from the boundaries = the maximum diameter of the tool being measured + 2mm.</div>
+</div>
+<br />The device is fixed to the machine body with three M3 screws. Three threaded holes are prefabricated in the machine body: <img src="/img/manual/vers_tsm_man1.jpeg" alt="tsm_v9_base" />
+<h2 style="color: #1a1c1e; font-size: 28px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f1f5f9;">Adjustment</h2>
+<p style="margin-bottom: 20px;">Before starting the measurement, it is necessary to adjust the device. As a result of the adjustment, the surface of the measuring platform should become parallel to the XY plane.</p>
+<div class="vers-alert vers-alert-info"><i class="material-icons">info_outline</i>
+<div>The indicator should be sensitive to a weak effect of 0.3-0.5N (for example, most lever indicators have this property).</div>
+</div>
+<p style="margin-bottom: 20px;">For adjustment, three points are selected at the measuring pad approximately at the edge of the site in the direction of the adjustment holes. The stylus of the indicator is located to measure the deviations in height. The results of the indicator must have to the same values ​​in these three selected points. For adjustment, a 2mm hex key is used from the kit, both screwing in and loosening of the adjustment screws located inside the holes, closed with elastic bands. The key is recommended to hold for a short lever, so as not to develop excessive force when screwing.</p>
+<img src="/img/manual/vers_tsm_man2.jpeg" alt="VersTSmv9_adj" />
+<h2 style="color: #1a1c1e; font-size: 28px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f1f5f9;">Connection</h2>
+<p style="margin-bottom: 20px;">Sensors are equipped with both types of outputs simultaneously. NPN-NC output on yellow wire, PNP-NC output on green wire</p>
+<img src="/img/manual/vers_tsm_man3.jpeg" alt="NPN_and_PNP_wj" />
+<h2 style="color: #1a1c1e; font-size: 28px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #f1f5f9;">Usage</h2>
+<p>There is software <a href="/content/19-probe-screen-v28" style="color: #52c1a2; font-weight: bold; text-decoration: none;">ProbeScreen</a> in free access for convenient work with probe in the LinuxCNC system.</p>
+<p>And <a href="/content/12-probe_wizard" style="color: #52c1a2; font-weight: bold; text-decoration: none;">Probe Wizard</a> for work in the Mach3 system.</p>
+<a href="/41-ts10.html" target="_blank" style="color: #52c1a2; font-weight: bold; text-decoration: none; font-size: 18px; font-family: Inter, sans-serif; margin: 20px 0;" rel="noreferrer noopener"> <i class="material-icons" style="margin-right: 8px; font-size: 26px;">play_arrow</i> Buy now </a></div>
 
 </body>
 </html>
