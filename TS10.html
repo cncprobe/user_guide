@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TS10 / TSm User Guide</title>
+    
+    <!-- Загружаем шрифты и иконки -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f8fafc;
+            color: #1a202c;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        /* Кнопка "Назад" */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #52c1a2;
+            font-weight: 600;
+            margin-bottom: 25px;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: #0b9e69; }
+        .back-link svg { margin-right: 8px; }
+
+        .vers-manual-wrapper {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 50px 60px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            margin-bottom: 50px;
+            color: #475569;
+            line-height: 1.8;
+            font-size: 15.5px;
+        }
+
+        /* Заголовки */
+        .vers-manual-wrapper h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #1a1c1e;
+            margin: 0 0 30px 0;
+        }
+
+        .vers-manual-wrapper h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1c1e;
+            margin-top: 45px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f1f5f9;
+            letter-spacing: -0.5px;
+        }
+
+        .vers-manual-wrapper p {
+            margin-bottom: 20px;
+        }
+
+        /* Ссылки внутри текста */
+        .vers-manual-wrapper a {
+            color: #52c1a2;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .vers-manual-wrapper a:hover {
+            color: #0b9e69;
+            text-decoration: underline;
+        }
+
+        /* Алерт-блоки */
+        .vers-alert {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px 25px;
+            border-radius: 16px;
+            margin: 30px 0;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .vers-alert i {
+            font-size: 24px;
+            margin-right: 15px;
+            margin-top: 2px;
+        }
+        
+        .vers-alert-info {
+            background-color: #f0fdfa;
+            border: 1px solid #ccfbf1;
+            color: #0f766e;
+        }
+        .vers-alert-info i { color: #14b8a6; }
+
+        .vers-alert-danger {
+            background-color: #fef2f2;
+            border: 1px solid #fee2e2;
+            color: #991b1b;
+        }
+        .vers-alert-danger i { color: #dc2626; }
+
+        /* Изображения */
+        .vers-img-wrapper {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .vers-manual-wrapper img {
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            border: 1px solid #f1f5f9;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .vers-img-caption {
+            text-align: center;
+            margin-top: 15px;
+            color: #64748b;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        /* Списки */
+        .vers-manual-wrapper ul, 
+        .vers-manual-wrapper ol {
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+        .vers-manual-wrapper li {
+            margin-bottom: 12px;
+            color: #1a1c1e;
+        }
+        .vers-manual-wrapper ul li::marker {
+            color: #52c1a2;
+            font-size: 1.2em;
+        }
+
+        /* Таблица характеристик (Карточки) */
+        .tech-spec-row {
+            background: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            padding: 16px 20px; 
+            margin-bottom: 12px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: box-shadow 0.2s ease;
+        }
+        .tech-spec-row:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .tech-spec-left {
+            color: #1a1c1e; 
+            font-weight: 600; 
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+        .tech-spec-left i {
+            color: #52c1a2; 
+            font-size: 24px; 
+            margin-right: 12px;
+        }
+        .tech-spec-right {
+            color: #334155; 
+            font-weight: 600; 
+            background: #f8fafc; 
+            padding: 6px 12px; 
+            border: 1px solid #e2e8f0; 
+            border-radius: 8px;
+            font-size: 14px; 
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .vers-recommendation {
+            color: #64748b;
+            font-style: italic;
+            margin-top: 5px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* Кнопка BUY */
+        .buy-btn {
+            display: inline-flex;
+            align-items: center;
+            color: #ffffff !important;
+            background-color: #52c1a2;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 18px !important;
+            font-weight: 700 !important;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(82, 193, 162, 0.3);
+            transition: all 0.3s ease !important;
+        }
+        .buy-btn i { margin-right: 8px; font-size: 24px; }
+        .buy-btn:hover {
+            background-color: #0b9e69;
+            box-shadow: 0 6px 20px rgba(11, 158, 105, 0.4);
+            color: #ffffff !important;
+            text-decoration: none !important;
+            transform: translateY(-2px);
+        }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .vers-manual-wrapper { padding: 30px 20px; }
+            .tech-spec-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .tech-spec-right { margin-left: 36px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Кнопка назад -->
+        <a href="index.html" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to manuals
+        </a>
+
+        <!-- Главный контент -->
+        <div class="vers-manual-wrapper">
+            <h1>User Guide</h1>
+            
+            <div class="vers-alert vers-alert-info">
+                <i class="material-icons">info_outline</i>
+                <div>This User Guide applies to the currently released <strong>TS10 / TSm</strong> models. For earlier versions, the User Guide can be found at the corresponding links in the <a href="https://verstest.site/content/category/7-archive">Archive.</a></div>
+            </div>
+
+            <h2>Purpose</h2>
+            <p>Tool setter <strong>TS10</strong> is designed to automatically measure the tool length and detect tool breakage on CNC milling machines. The CNC system records the coordinates when the tool touches the setter plate and uses them for automated tool length offset compensation.</p>
+            <p>The device can be used with various CNC systems: LinuxCNC, Mach3, GRBL, etc. The device is connected to the CNC system via a cable (see section <a href="#connection">Connection</a>).</p>
+
+            <h2>TS10 features</h2>
+            <ol>
+                <li>High-precision repeatability <strong>&lt; 0.001 mm</strong>.</li>
+                <li>Hardened contact surface.</li>
+                <li>Overtravel protection mechanism.</li>
+                <li>Equipped with both <strong>NPN-NC and PNP-NC</strong> output types.</li>
+                <li><strong>Protection</strong> against short circuits of the output to power or ground, and reverse polarity.</li>
+                <li>Compact and robust design optimized for industrial shop floors.</li>
+            </ol>
+
+            <h2>Specification</h2>
+            <div style="margin-bottom: 40px;">
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">straighten</i> Repeatability</div>
+                    <div class="tech-spec-right">&lt; 0.001 mm</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">bolt</i> Power supply</div>
+                    <div class="tech-spec-right">+5v...+24v</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">electrical_services</i> Current consumption</div>
+                    <div class="tech-spec-right">&lt; 4 mA</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">vertical_align_bottom</i> Over travel limit (Z)</div>
+                    <div class="tech-spec-right">5 mm</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">compress</i> Contact force</div>
+                    <div class="tech-spec-right">1.5 N</div>
+                </div>
+                <div class="tech-spec-row">
+                    <div class="tech-spec-left"><i class="material-icons">shield</i> Protection grade</div>
+                    <div class="tech-spec-right">IP67</div>
+                </div>
+            </div>
+
+            <div class="vers-img-wrapper">
+                <img src="https://vers.ge/img/manual/vers_tsm_man1.jpeg" alt="TS10 dimensions" />
+            </div>
+            <p class="vers-recommendation">* All sizes are for reference.</p>
+
+            <h2 id="connection">Connection</h2>
+            <p>The tool setter is equipped with NPN-NC and PNP-NC outputs, polarity reversal protection, and protection against short circuits of the output to power and ground.</p>
+            
+            <p><strong>Wiring diagram to the machine:</strong></p>
+            <div class="vers-img-wrapper">
+                <img src="https://vers.ge/img/manual/vers_tsm_man3.jpeg" alt="TS10 wiring diagram" />
+            </div>
+            
+            <p style="color: #64748b; font-style: italic; font-size: 14px; text-align: left;">The colors of the wires inside the cable from the kit correspond to the colors of the connections on the diagram.</p>
+
+            <h2>Usage</h2>
+            <p>To configure automated tool length measurement routines in <strong>LinuxCNC</strong> or <strong>Mach3</strong>, refer to your controller's macro configuration guidelines.</p>
+
+            <!-- Кнопка покупки -->
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://vers.ge" target="_blank" rel="noreferrer noopener" class="buy-btn">
+                    <i class="material-icons">shopping_cart</i> Buy TS10
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
